@@ -1,0 +1,281 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "pyproject.toml"
+      - ".github/workflows/docs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write # Allow commits for auto-fixing
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        id: setup-python-lint
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-lint-${{ runner.os }}-${{ steps.setup-python-lint.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+
+      - name: Run pre-commit hooks
+        run: poetry run pre-commit run --all-files --show-diff-on-failure
+
+      - name: Test documentation build
+        run: |
+          echo "🏗️ Testing if documentation builds successfully..."
+          poetry run mkdocs build --strict
+          echo "✅ Documentation builds successfully!"
+
+      - name: Validate navigation and links
+        run: |
+          echo "🔍 Validating navigation structure..."
+          # Check if all nav items have corresponding files
+          poetry run python -c "
+          import yaml
+          import os
+
+          with open('mkdocs.yml', 'r') as f:
+              config = yaml.safe_load(f)
+
+          def check_nav_item(item, path=''):
+              if isinstance(item, dict):
+                  for key, value in item.items():
+                      if isinstance(value, str):
+                          file_path = os.path.join('docs', value)
+                          if not os.path.exists(file_path):
+                              print(f'❌ Missing file: {file_path}')
+                              exit(1)
+                          else:
+                              print(f'✅ Found: {file_path}')
+                      elif isinstance(value, list):
+                          for sub_item in value:
+                              check_nav_item(sub_item, path)
+              elif isinstance(item, list):
+                  for sub_item in item:
+                      check_nav_item(sub_item, path)
+
+          if 'nav' in config:
+              check_nav_item(config['nav'])
+              print('✅ All navigation files exist!')
+          else:
+              print('⚠️ No navigation section found in mkdocs.yml')
+          "
+
+      - name: Check for broken internal links
+        run: |
+          echo "🔗 Checking for broken internal links in markdown files..."
+          find docs -name "*.md" -exec grep -l "\[\[.*\]\]" {} \; | while read file; do
+            echo "⚠️ Found wiki-style links in $file - consider converting to standard markdown links"
+          done
+
+          # Check for common broken link patterns
+          find docs -name "*.md" -exec grep -Hn "](\.\./" {} \; | while read line; do
+            echo "⚠️ Potential relative link issue: $line"
+          done
+
+      - name: Check if files were modified
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Files were modified by pre-commit hooks:"
+            git status --porcelain
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No files were modified by pre-commit hooks"
+          fi
+
+      - name: Commit and push changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "🔧 Auto-fix markdown linting issues [skip ci]"
+          git push
+
+  build:
+    runs-on: ubuntu-latest
+    needs: lint
+    if: needs.lint.result == 'success'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Needed for git revision date plugin
+
+      - name: Setup Python
+        id: setup-python-build
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: latest
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v3
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python-build.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+
+      - name: Build documentation
+        run: poetry run mkdocs build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: [build, deploy]
+    if: always() && needs.deploy.result == 'success'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 10 # Get recent commits for changelog
+
+      - name: Get latest changes
+        id: changes
+        run: |
+          # Get the latest commit info
+          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")
+          COMMIT_AUTHOR=$(git log -1 --pretty=format:"%an")
+          COMMIT_SHA=$(git log -1 --pretty=format:"%h")
+          COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+
+          # Get changed files related to documentation
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep -E '\.(md|yml|yaml)$' | head -10 || echo "No documentation files changed")
+
+          # Get recent commits (last 5)
+          RECENT_COMMITS=$(git log --oneline -5 --pretty=format:"• %s (%an)")
+
+          echo "commit_message=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
+          echo "commit_author=$COMMIT_AUTHOR" >> $GITHUB_OUTPUT
+          echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
+          echo "commit_url=$COMMIT_URL" >> $GITHUB_OUTPUT
+          echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "recent_commits<<EOF" >> $GITHUB_OUTPUT
+          echo "$RECENT_COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Send Discord notification
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          # Check if webhook URL is set
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "Discord webhook URL not set, skipping notification"
+            exit 0
+          fi
+          # Create the Discord message payload
+          cat << EOF > discord_payload.json
+          {
+            "embeds": [
+              {
+                "title": "📚 Documentation Updated",
+                "description": "The Beet product documentation has been successfully updated and deployed!",
+                "color": 3447003,
+                "url": "https://alter-dimensions.github.io/beetween",
+                "thumbnail": {
+                  "url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                },
+                "fields": [
+                  {
+                    "name": "🔄 Latest Commit",
+                    "value": "**${{ steps.changes.outputs.commit_message }}**\nby ${{ steps.changes.outputs.commit_author }} (\`${{ steps.changes.outputs.commit_sha }}\`)",
+                    "inline": false
+                  },
+                  {
+                    "name": "📝 Changed Files",
+                    "value": "\`\`\`${{ steps.changes.outputs.changed_files }}\`\`\`",
+                    "inline": false
+                  },
+                  {
+                    "name": "📋 Recent Changes",
+                    "value": "${{ steps.changes.outputs.recent_commits }}",
+                    "inline": false
+                  },
+                  {
+                    "name": "🔗 Links",
+                    "value": "[📖 View Documentation](https://alter-dimensions.github.io/beetween) • [💻 View Commit](${{ steps.changes.outputs.commit_url }}) • [🔧 Repository](https://github.com/${{ github.repository }})",
+                    "inline": false
+                  }
+                ],
+                "footer": {
+                  "text": "Beetween Documentation • Deployed via GitHub Actions",
+                  "icon_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                },
+                "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%S.000Z)"
+              }
+            ]
+          }
+          EOF
+
+          # Send the webhook
+          curl -H "Content-Type: application/json" \
+               -d @discord_payload.json \
+               "$DISCORD_WEBHOOK_URL"

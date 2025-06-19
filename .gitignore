@@ -1,0 +1,44 @@
+# Created by Poetry
+/dist/
+/site/
+/.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# MkDocs
+/site/
+.cache/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

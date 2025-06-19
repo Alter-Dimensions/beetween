@@ -1,0 +1,157 @@
+site_name: Beet - Product Development Hub
+site_description: Internal documentation for Beet product development team
+site_author: Beet Development Team
+site_url: https://alter-dimensions.github.io/beetween
+
+# Repository
+repo_name: beetween
+repo_url: https://github.com/Alter-Dimensions/beetween
+edit_uri: edit/main/docs/
+
+# Configuration
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - content.action.edit
+    - content.action.view
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: datetime
+  - minify:
+      minify_html: true
+  - glightbox
+  - mermaid2
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: Alter-Dimensions
+      repo: beetween
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Navigation
+nav:
+  - Home: index.md
+  - Product Overview:
+      - Vision & Goals: overview/vision.md
+      - Team Structure: overview/team.md
+      - Success Metrics: overview/metrics.md
+      - Roadmap: overview/roadmap.md
+  - Features:
+      - User Authentication:
+          - Overview: features/user-auth/index.md
+          - Requirements: features/user-auth/requirements.md
+          - Design: features/user-auth/design.md
+          - Implementation: features/user-auth/implementation.md
+          - Testing: features/user-auth/testing.md
+          - Status: features/user-auth/status.md
+      - Dashboard:
+          - Overview: features/dashboard/index.md
+          - Requirements: features/dashboard/requirements.md
+          - Design: features/dashboard/design.md
+          - Implementation: features/dashboard/implementation.md
+          - Testing: features/dashboard/testing.md
+          - Status: features/dashboard/status.md
+      - Data Processing:
+          - Overview: features/data-processing/index.md
+          - Requirements: features/data-processing/requirements.md
+          - Design: features/data-processing/design.md
+          - Implementation: features/data-processing/implementation.md
+          - Testing: features/data-processing/testing.md
+          - Status: features/data-processing/status.md
+  - Decisions & Pivots:
+      - Decision Log: decisions/index.md
+      - Architecture Decisions: decisions/architecture.md
+      - Technology Choices: decisions/technology.md
+      - Pivot History: decisions/pivots.md
+      - Lessons Learned: decisions/lessons.md
+  - Resources:
+      - Development Setup: resources/setup.md
+      - Team Guidelines: resources/guidelines.md
+      - Meeting Notes: resources/meetings.md
+      - Onboarding Guide: resources/onboarding.md
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Alter-Dimensions
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/Alter-Dimensions
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/Alter-Dimensions
+  version:
+    provider: mike
