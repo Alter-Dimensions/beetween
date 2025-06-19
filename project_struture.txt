@@ -1,0 +1,185 @@
+.
+├── CHANGELOG.md
+├── check-links.sh
+├── CONTRIBUTING.md
+├── docs
+│   ├── CONTRIBUTING.md
+│   ├── decisions
+│   │   ├── architecture.md
+│   │   ├── index.md
+│   │   ├── lessons.md
+│   │   ├── pivots.md
+│   │   └── technology.md
+│   ├── DEVELOPMENT.md
+│   ├── features
+│   │   ├── dashboard
+│   │   │   ├── design.md
+│   │   │   ├── implementation.md
+│   │   │   ├── index.md
+│   │   │   ├── requirements.md
+│   │   │   ├── status.md
+│   │   │   └── testing.md
+│   │   ├── data-processing
+│   │   │   ├── design.md
+│   │   │   ├── implementation.md
+│   │   │   ├── index.md
+│   │   │   ├── requirements.md
+│   │   │   ├── status.md
+│   │   │   └── testing.md
+│   │   └── user-auth
+│   │       ├── design.md
+│   │       ├── implementation.md
+│   │       ├── index.md
+│   │       ├── requirements.md
+│   │       ├── status.md
+│   │       └── testing.md
+│   ├── index.md
+│   ├── overview
+│   │   ├── metrics.md
+│   │   ├── roadmap.md
+│   │   ├── team.md
+│   │   └── vision.md
+│   ├── QUICK-START.md
+│   └── resources
+│       ├── guidelines.md
+│       ├── index.md
+│       ├── meetings.md
+│       ├── onboarding.md
+│       └── setup.md
+├── mkdocs.yml
+├── poetry.lock
+├── project_struture.txt
+├── pyproject.toml
+├── README.md
+├── site
+│   ├── 404.html
+│   ├── assets
+│   │   ├── images
+│   │   │   └── favicon.png
+│   │   ├── javascripts
+│   │   │   ├── bundle.13a4f30d.min.js
+│   │   │   ├── bundle.13a4f30d.min.js.map
+│   │   │   ├── glightbox.min.js
+│   │   │   ├── lunr
+│   │   │   │   ├── min
+│   │   │   │   │   ├── lunr.ar.min.js
+│   │   │   │   │   ├── lunr.da.min.js
+│   │   │   │   │   ├── lunr.de.min.js
+│   │   │   │   │   ├── lunr.du.min.js
+│   │   │   │   │   ├── lunr.el.min.js
+│   │   │   │   │   ├── lunr.es.min.js
+│   │   │   │   │   ├── lunr.fi.min.js
+│   │   │   │   │   ├── lunr.fr.min.js
+│   │   │   │   │   ├── lunr.he.min.js
+│   │   │   │   │   ├── lunr.hi.min.js
+│   │   │   │   │   ├── lunr.hu.min.js
+│   │   │   │   │   ├── lunr.hy.min.js
+│   │   │   │   │   ├── lunr.it.min.js
+│   │   │   │   │   ├── lunr.ja.min.js
+│   │   │   │   │   ├── lunr.jp.min.js
+│   │   │   │   │   ├── lunr.kn.min.js
+│   │   │   │   │   ├── lunr.ko.min.js
+│   │   │   │   │   ├── lunr.multi.min.js
+│   │   │   │   │   ├── lunr.nl.min.js
+│   │   │   │   │   ├── lunr.no.min.js
+│   │   │   │   │   ├── lunr.pt.min.js
+│   │   │   │   │   ├── lunr.ro.min.js
+│   │   │   │   │   ├── lunr.ru.min.js
+│   │   │   │   │   ├── lunr.sa.min.js
+│   │   │   │   │   ├── lunr.stemmer.support.min.js
+│   │   │   │   │   ├── lunr.sv.min.js
+│   │   │   │   │   ├── lunr.ta.min.js
+│   │   │   │   │   ├── lunr.te.min.js
+│   │   │   │   │   ├── lunr.th.min.js
+│   │   │   │   │   ├── lunr.tr.min.js
+│   │   │   │   │   ├── lunr.vi.min.js
+│   │   │   │   │   └── lunr.zh.min.js
+│   │   │   │   ├── tinyseg.js
+│   │   │   │   └── wordcut.js
+│   │   │   └── workers
+│   │   │       ├── search.d50fe291.min.js
+│   │   │       └── search.d50fe291.min.js.map
+│   │   └── stylesheets
+│   │       ├── glightbox.min.css
+│   │       ├── main.342714a4.min.css
+│   │       ├── main.342714a4.min.css.map
+│   │       ├── palette.06af60db.min.css
+│   │       └── palette.06af60db.min.css.map
+│   ├── CONTRIBUTING
+│   │   └── index.html
+│   ├── decisions
+│   │   ├── architecture
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   ├── lessons
+│   │   │   └── index.html
+│   │   ├── pivots
+│   │   │   └── index.html
+│   │   └── technology
+│   │       └── index.html
+│   ├── DEVELOPMENT
+│   │   └── index.html
+│   ├── features
+│   │   ├── dashboard
+│   │   │   ├── design
+│   │   │   │   └── index.html
+│   │   │   ├── implementation
+│   │   │   │   └── index.html
+│   │   │   ├── index.html
+│   │   │   ├── requirements
+│   │   │   │   └── index.html
+│   │   │   ├── status
+│   │   │   │   └── index.html
+│   │   │   └── testing
+│   │   │       └── index.html
+│   │   ├── data-processing
+│   │   │   ├── design
+│   │   │   │   └── index.html
+│   │   │   ├── implementation
+│   │   │   │   └── index.html
+│   │   │   ├── index.html
+│   │   │   ├── requirements
+│   │   │   │   └── index.html
+│   │   │   ├── status
+│   │   │   │   └── index.html
+│   │   │   └── testing
+│   │   │       └── index.html
+│   │   └── user-auth
+│   │       ├── design
+│   │       │   └── index.html
+│   │       ├── implementation
+│   │       │   └── index.html
+│   │       ├── index.html
+│   │       ├── requirements
+│   │       │   └── index.html
+│   │       ├── status
+│   │       │   └── index.html
+│   │       └── testing
+│   │           └── index.html
+│   ├── index.html
+│   ├── overview
+│   │   ├── metrics
+│   │   │   └── index.html
+│   │   ├── roadmap
+│   │   │   └── index.html
+│   │   ├── team
+│   │   │   └── index.html
+│   │   └── vision
+│   │       └── index.html
+│   ├── resources
+│   │   ├── guidelines
+│   │   │   └── index.html
+│   │   ├── index.html
+│   │   ├── meetings
+│   │   │   └── index.html
+│   │   ├── onboarding
+│   │   │   └── index.html
+│   │   └── setup
+│   │       └── index.html
+│   ├── search
+│   │   └── search_index.json
+│   ├── sitemap.xml
+│   └── sitemap.xml.gz
+└── Taskfile.yml
+
+54 directories, 129 files
