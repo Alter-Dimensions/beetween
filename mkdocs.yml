@@ -105,10 +105,6 @@ markdown_extensions:
 # Navigation
 nav:
   - Home: index.md
-  - 🚀 Getting Started:
-      - Documentation Checklist: DOCUMENTATION-CHECKLIST.md
-      - Development Guide: DEVELOPMENT.md
-      - Contributing Guide: CONTRIBUTING.md
   - Product Overview:
       - Vision & Goals: product/vision.md
       - Team Structure: product/team.md
@@ -116,6 +112,11 @@ nav:
       - Roadmap: product/roadmap.md
   - Features:
       - Feature Documentation Guide: features/README.md
+      - Beet Bites: features/bites/feature.md
+      - Box Office: features/box-office/feature.md
+      - Beet Bucks: features/bucks/feature.md
+      - Events: features/events/feature.md
+      - Profile: features/profile/feature.md
       - User Authentication: features/user-auth/feature.md
       - Payment Processing: features/pay/feature.md
   - Decisions & Pivots:
@@ -125,17 +126,6 @@ nav:
       - Pivot History: decisions/pivots.md
       - Lessons Learned: decisions/lessons.md
   - Resources: resources/index.md
-  - Templates:
-      - Template Guide: templates/README.md
-      - Feature Template: templates/feature-template.md
-      - User Guide Template: templates/user-guide-template.md
-      - API Template: templates/api-template.md
-      - Process Template: templates/process-template.md
-      - Decision Template: templates/decision-template.md
-      - Meeting Notes Template: templates/meeting-notes-template.md
-      - Troubleshooting Template: templates/troubleshooting-template.md
-      - FAQ Template: templates/faq-template.md
-
 # Extra
 extra:
   social:
