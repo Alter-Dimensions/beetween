@@ -1,4 +1,4 @@
-# architecture Decisions
+# Architecture Decisions
 
 This page contains architecture decisions and documentation.
 

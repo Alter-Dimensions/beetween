@@ -78,6 +78,4 @@
 
 **Status**: [Not Started/In Progress/Completed]
 **Priority**: [High/Medium/Low]
-**Owner**: [Name]
 **Target Release**: [Date]
-**Last Updated**: [Date]

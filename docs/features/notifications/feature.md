@@ -277,6 +277,4 @@
 
 **Status**: Planning
 **Priority**: High
-**Owner**: Growth Team
 **Target Release**: Q1 2025 (MVP)
-**Last Updated**: December 2024

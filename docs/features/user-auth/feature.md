@@ -107,6 +107,4 @@
 
 **Status**: 🔄 In Progress (65% Complete)
 **Priority**: High
-**Owner**: John Smith (Developer)
 **Target Release**: Sprint 5 - February 15, 2024
-**Last Updated**: June 19, 2025

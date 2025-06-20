@@ -46,9 +46,9 @@ docs/
 ├── features/           # Feature-specific documentation
 │   ├── user-auth/     # Each feature gets its own folder
 │   ├── pay/           # with standardized structure
-│   ├── bites/         
+│   ├── bites/
 │   ├── notifications/ # NEW: Smart notification system
-│   └── [feature]/     
+│   └── [feature]/
 ├── software-3.0/      # NEW: AI/agent-ready architecture
 ├── product/           # Product-level documentation
 ├── decisions/         # Architecture and tech decisions

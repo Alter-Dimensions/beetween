@@ -44,44 +44,45 @@ Beet is a vertical super-aggregator. By consolidating the fragmented supply of e
 
 ## **Part 2: The Master Plan (The "How")**
 
-### **Phase 1: Beachhead - Capture the High-Passion Niche (Months 0–6)**
+### **Phase 1: Beachhead - Capture the High-Passion Niche (Jun 2025 – Dec 2025)**
 
 * **Objective:**
   Achieve product-market fit with the most passionate user segment in a single geography.
 
 * **Actions:**
-  Aggregate all Cricket and major Bollywood events in one key metro area `[Target City: SF Bay Area]`.
+  Aggregate all Cricket and major Bollywood events in SF Bay Area.
   Manually curate the first 100 events.
+  Launch alpha in July, beta in August, public launch in September.
 
 * **Success Metric:**
-  `[Target: 1,000 WAU]` with `[Target: 30% 4-week retention]`.
+  10,000 WAU with 30% 4-week retention by December 2025.
 
-### **Phase 2: Aggregation & Moat - Become the Gravity Well (Months 6–18)**
+### **Phase 2: Aggregation & Moat - Become the Gravity Well (Dec 2025 – Jun 2026)**
 
 * **Objective:**
   Become the most comprehensive data source for our niche and build a defensible competitive advantage.
 
 * **Actions:**
-  Scale aggregation technology to 5 major metro areas.
-  Secure `[Target: 2–3]` key ticketing API partnerships.
-  Launch loyalty program.
+  Scale aggregation technology to 8 major metro areas (SF, LA, NYC, Chicago, Houston, Dallas, Seattle, DC).
+  Secure 5+ key ticketing API partnerships.
+  Launch Bucks loyalty program and movie booking integration.
 
 * **Success Metric:**
   Become the #1 search result for "Indian events" in target cities.
-  Achieve `[Target: 50,000 WAU]`.
+  Achieve 75,000 WAU with $150K monthly revenue.
 
-### **Phase 3: Market Dominance - Become the Default Utility (Months 18+)**
+### **Phase 3: Market Dominance - Become the Default Utility (Jun 2026+)**
 
 * **Objective:**
   Make Beet an indispensable tool for our target demographic across the US.
 
 * **Actions:**
-  National rollout.
-  Launch B2B portal for organizers.
-  Explore exclusive content.
+  National rollout to 15+ major metro areas.
+  Launch B2B portal for event organizers.
+  Exclusive content partnerships and corporate event solutions.
 
 * **Success Metric:**
-  `[Target: 250,000+ WAU]` and establish a clear path to profitability.
+  250,000+ WAU, platform profitability, and Series A fundraising by Q4 2026.
 
 ---
 
@@ -109,9 +110,13 @@ Our business is governed by this formula. We will set and track goals for each v
 Growth = (Content Aggregated) x (Acquisition Rate) x (Engagement & Retention Rate)
 ```
 
-* **Q4 Content Goal:** `[TBD: e.g., 100 active events in target city]`
-* **Q4 Acquisition Goal:** `[TBD: e.g., 1,000 new users]`
-* **Q4 Engagement Goal:** `[TBD: e.g., 15% WAU/MAU ratio]`
+* **Q3 2025 Content Goal:** 200 active events in SF Bay Area
+* **Q3 2025 Acquisition Goal:** 2,000 total users
+* **Q3 2025 Engagement Goal:** 20% WAU/MAU ratio
+
+* **Q4 2025 Content Goal:** 800 active events across 3 cities
+* **Q4 2025 Acquisition Goal:** 8,000 total users
+* **Q4 2025 Engagement Goal:** 25% WAU/MAU ratio
 
 ### 3. The Anti-Patterns (What We Will Not Do)
 
@@ -129,13 +134,13 @@ Growth = (Content Aggregated) x (Acquisition Rate) x (Engagement & Retention Rat
   Users desire one app for events, movies, *and* deals.
 ##### **Validation Plan:**
   Track cross-feature usage.
-  `[Success Criteria: TBD, e.g., >20% of WAU engage with 2+ categories by Month 3]`.
+  Success Criteria: >25% of WAU engage with 2+ categories by December 2025.
 
 #### **Assumption #2 (The "Scalable Content" Thesis):**
   We can automate content aggregation at a low cost.
 ##### **Validation Plan:**
   Build and test initial scrapers/integrations.
-  `[Success Criteria: TBD, e.g., Aggregate 80% of target events with <10 hours/week manual effort]`.
+  Success Criteria: Aggregate 80% of target events with <5 hours/week manual effort by March 2026.
 
 ### 2. Existential Risks & Mitigation
 
@@ -152,5 +157,5 @@ Growth = (Content Aggregated) x (Acquisition Rate) x (Engagement & Retention Rat
 ---
 
 **Document Owner:** Ranga Reddy
-**Last Updated:** June 20, 2025
+**Beta Launch:** August 1, 2025
 **Status:** Living Document – Placeholders require active research.

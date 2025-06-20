@@ -198,7 +198,7 @@ Factors:
 3. Activate group bookings
 4. Launch exclusive previews
 
-### For Restaurants  
+### For Restaurants
 1. Sync menu and dietary info
 2. Enable table reservations
 3. Create event dining packages
@@ -233,6 +233,4 @@ Factors:
 ---
 
 **Document Owner**: Partnerships Team
-**Created**: December 2024
-**Last Updated**: December 2024
-**Next Review**: Q1 2025
+**Next Review**: Q1 2026

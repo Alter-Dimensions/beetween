@@ -175,6 +175,4 @@
 
 **Status**: Not Started
 **Priority**: High
-**Owner**: TBD
 **Target Release**: Q2 2025
-**Last Updated**: December 2024

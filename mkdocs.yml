@@ -104,34 +104,49 @@ markdown_extensions:
 
 # Navigation
 nav:
-  - Home: index.md
-  - Product Overview:
+  - Getting Started: getting-started.md
+  - Product:
       - Vision & Goals: product/vision.md
+      - Roadmap: product/roadmap.md
+      - Launch Plan: product/launch-plan.md
       - Team Structure: product/team.md
       - Success Metrics: product/metrics.md
-      - Roadmap: product/roadmap.md
   - Features:
-      - Feature Documentation Guide: features/README.md
+      - Overview: features/README.md
+      - Analysis: features/feature-analysis.md
+      - User Authentication: features/user-auth/feature.md
+      - User Profile: features/profile/feature.md
+      - Events: features/events/feature.md
       - Bites: features/bites/feature.md
       - Box Office: features/box-office/feature.md
-      - Bucks: features/bucks/feature.md
-      - Events: features/events/feature.md
-      - Notifications: features/notifications/feature.md
-      - Profile: features/profile/feature.md
-      - Auth: features/user-auth/feature.md
       - Pay: features/pay/feature.md
+      - Bucks: features/bucks/feature.md
+      - Notifications: features/notifications/feature.md
   - Software 3.0:
       - Overview: software-3.0/index.md
       - AI-Powered Features: software-3.0/ai-features.md
       - Agent-Ready Architecture: software-3.0/agent-ready.md
       - Partnership Automation: software-3.0/partnership-automation.md
-  - Decisions & Pivots:
-      - Decision Log: decisions/index.md
-      - Architecture Decisions: decisions/architecture.md
-      - Technology Choices: decisions/technology.md
-      - Pivot History: decisions/pivots.md
-      - Lessons Learned: decisions/lessons.md
-  - Resources: resources/index.md
+  - Decisions:
+      - Dashboard: decisions/index.md
+      - Product Decisions:
+          - "ADR-001: User Auth Approach": decisions/product/adr-002-user-auth-approach.md
+      - Technical Decisions:
+          - "ADR-002: Backend Tech Stack": decisions/technical/adr-001-backend-tech-stack.md
+      - Business Decisions:
+          - "ADR-003: Cine Lounge": decisions/business/adr-003-cine-lounge.md
+      - Strategic Insights:
+          - Architecture: decisions/architecture.md
+          - Technology: decisions/technology.md
+          - Pivots & Course Corrections: decisions/pivots.md
+          - Lessons Learned: decisions/lessons.md
+      - Resources:
+          - ADR Template: decisions/templates/adr-template.md
+  - Resources:
+      - Product Resources: resources/index.md
+      - Team Guidelines: resources/guidelines.md
+      - Development Guide: DEVELOPMENT.md
+      - Contributing Guide: CONTRIBUTING.md
 # Extra
 extra:
   social:

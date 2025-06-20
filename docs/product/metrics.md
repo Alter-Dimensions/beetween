@@ -18,7 +18,7 @@ This is the single metric that best captures the core value we deliver to our us
 
 ---
 
-### **2. Core System Inputs (Is the Machine Being Fueled?)**
+## **2. Core System Inputs (Is the Machine Being Fueled?)**
 
 These metrics measure our ability to feed the machine with high-quality product and content at a high velocity.
 
@@ -34,7 +34,7 @@ These metrics measure our ability to feed the machine with high-quality product 
 
 ---
 
-### **3. Core System Throughput (Is the Machine Working?)**
+## **3. Core System Throughput (Is the Machine Working?)**
 
 These metrics measure the core health of our user growth and engagement engine.
 
@@ -50,7 +50,7 @@ These metrics measure the core health of our user growth and engagement engine.
 
 ---
 
-### **4. Core System Outputs (Is the Output High Quality?)**
+## **4. Core System Outputs (Is the Output High Quality?)**
 
 These metrics measure the ultimate result of our efforts: user happiness and business viability.
 
@@ -71,7 +71,7 @@ These metrics measure the ultimate result of our efforts: user happiness and bus
 
 ---
 
-### **5. Operational Protocol**
+## **5. Operational Protocol**
 
 **Dashboard Review Cadence:**
 The core telemetry dashboard is reviewed at the beginning of our weekly team meeting. There is no waiting for a monthly report.

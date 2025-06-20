@@ -139,6 +139,4 @@ AI builds a comprehensive understanding:
 ---
 
 **Document Owner**: AI/ML Team Lead
-**Created**: December 2024
-**Last Updated**: December 2024
-**Next Review**: Q1 2025
+**Next Review**: Q1 2026

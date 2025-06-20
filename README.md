@@ -240,7 +240,6 @@ This documentation is internal to [Company Name] and contains proprietary inform
 ---
 
 **Repository Owner**: [Product Team Lead Name]
-**Last Updated**: June 19, 2025
 **Next Review**: [Next quarterly review date]
 
 *This documentation is a living resource - please help keep it current and useful for the whole team!*

@@ -61,6 +61,46 @@ tasks:
       - poetry update
       - poetry run pre-commit autoupdate
 
+  create-feature:
+    desc: Create a new feature with standard template
+    cmds:
+      - |
+        if [ -z "{{.FEATURE_NAME}}" ]; then
+          echo "❌ Error: Please provide a feature name"
+          echo "Usage: task create-feature FEATURE_NAME=feature-name"
+          echo "Example: task create-feature FEATURE_NAME=social-sharing"
+          exit 1
+        fi
+      - |
+        # Create feature directory
+        FEATURE_DIR="docs/features/{{.FEATURE_NAME}}"
+        mkdir -p "$FEATURE_DIR/assets"
+
+        # Create feature.md from template
+        if [ -f "docs/features/_template.md" ]; then
+          cp "docs/features/_template.md" "$FEATURE_DIR/feature.md"
+
+          # Replace placeholders in template
+          FEATURE_TITLE=$(echo "{{.FEATURE_NAME}}" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+          sed -i.bak "s/Feature Name/$FEATURE_TITLE/g" "$FEATURE_DIR/feature.md"
+          sed -i.bak "s/feature-name/{{.FEATURE_NAME}}/g" "$FEATURE_DIR/feature.md"
+          sed -i.bak "s/YYYY-MM-DD/$(date +%Y-%m-%d)/g" "$FEATURE_DIR/feature.md"
+          sed -i.bak "s/Team Member Name/$(git config user.name || echo 'Team Member')/g" "$FEATURE_DIR/feature.md"
+
+          # Clean up backup file
+          rm -f "$FEATURE_DIR/feature.md.bak"
+
+          echo "✅ Created new feature: $FEATURE_DIR"
+          echo "📝 Next steps:"
+          echo "   1. Edit $FEATURE_DIR/feature.md and fill in all sections"
+          echo "   2. Add assets to $FEATURE_DIR/assets/ folder"
+          echo "   3. Update mkdocs.yml navigation to include the new feature"
+          echo "   4. Run 'task serve' to preview your changes"
+        else
+          echo "❌ Error: Template file docs/features/_template.md not found"
+          exit 1
+        fi
+
   list-features:
     desc: List all available features
     cmds:
@@ -76,3 +116,92 @@ tasks:
         else
           echo "   No features directory found"
         fi
+
+  create-decision:
+    desc: Create a new Architecture Decision Record (ADR)
+    vars:
+      CURRENT_YEAR:
+        sh: date +%Y
+      CURRENT_MONTH:
+        sh: date +%m
+      CURRENT_MONTH_NAME:
+        sh: date +%B | tr '[:upper:]' '[:lower:]'
+      CURRENT_DATE:
+        sh: date +%Y-%m-%d
+      NEXT_ADR:
+        sh: |
+          # Find the highest ADR number in category folders
+          highest=0
+          for file in docs/decisions/*/*.md; do
+            if [[ -f "$file" && $(basename "$file") =~ adr-([0-9]+)- ]]; then
+              num=${BASH_REMATCH[1]}
+              if (( num > highest )); then
+                highest=$num
+              fi
+            fi
+          done
+          printf "%03d" $((highest + 1))
+    cmds:
+      - |
+        if [ -z "{{.DECISION_TITLE}}" ]; then
+          echo "❌ Error: Please provide a decision title and category"
+          echo "Usage: task create-decision DECISION_TITLE=\"Your Decision Title\" CATEGORY=product"
+          echo "Categories: product, technical, business"
+          echo "Example: task create-decision DECISION_TITLE=\"Choose Payment Provider\" CATEGORY=business"
+          exit 1
+        fi
+      - |
+        # Ask for category
+        if [ -z "{{.CATEGORY}}" ]; then
+          echo "Please specify category: product, technical, or business"
+          echo "Usage: task create-decision DECISION_TITLE=\"Your Title\" CATEGORY=product"
+          exit 1
+        fi
+
+        # Create directory structure
+        mkdir -p "docs/decisions/{{.CATEGORY}}"
+
+        # Generate filename
+        TITLE_SLUG=$(echo "{{.DECISION_TITLE}}" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-\|-$//g')
+        FILENAME="docs/decisions/{{.CATEGORY}}/adr-{{.NEXT_ADR}}-${TITLE_SLUG}.md"
+
+        # Copy template and customize
+        cp docs/decisions/templates/adr-template.md "$FILENAME"
+
+        # Replace placeholders
+        sed -i.bak "s/ADR-XXX/ADR-{{.NEXT_ADR}}/g" "$FILENAME"
+        sed -i.bak "s/\[Decision Title\]/{{.DECISION_TITLE}}/g" "$FILENAME"
+        sed -i.bak "s/YYYY-MM-DD/{{.CURRENT_DATE}}/g" "$FILENAME"
+        sed -i.bak "s/\[Team\/Person Name\]/$(git config user.name || echo 'Team Name')/g" "$FILENAME"
+
+        # Clean up backup file
+        rm -f "$FILENAME.bak"
+
+        echo "✅ Created new ADR: $FILENAME"
+        echo "📝 Next steps:"
+        echo "   1. Edit the file and fill in all sections"
+        echo "   2. Update docs/decisions/index.md with the new decision"
+        echo "   3. Add to mkdocs.yml navigation if needed"
+        echo "   4. Set a review date and assign ownership"
+
+  list-decisions:
+    desc: List all Architecture Decision Records
+    cmds:
+      - echo "📋 All Decisions:"
+      - |
+        find docs/decisions -name "adr-*.md" -type f | sort | while read -r file; do
+          if [ -f "$file" ]; then
+            # Extract ADR number and title from filename
+            basename_file=$(basename "$file")
+            if [[ $basename_file =~ adr-([0-9]+)-(.+)\.md ]]; then
+              adr_num=${BASH_REMATCH[1]}
+              title_slug=${BASH_REMATCH[2]}
+              title=$(echo "$title_slug" | sed 's/-/ /g' | sed 's/\b\w/\U&/g')
+
+              # Try to extract status from file content
+              status=$(grep -m1 "Status.*:" "$file" | sed 's/.*Status.*: *//g' | head -c 20)
+
+              echo "   📄 ADR-$adr_num: $title [$status]"
+            fi
+          fi
+        done
