@@ -3,7 +3,7 @@
 ## 📋 This Week's Priorities (Pick 3-5)
 
 ### 🚨 URGENT (Do First)
-- [ ] **Project Overview** - Update `docs/index.md` with clear "What is Beet?"
+- [x] **Project Overview** - Update `docs/index.md` with clear "What is Beet?"
 - [ ] **Team Contact Info** - Complete `docs/overview/team.md` with who does what
 - [ ] **Setup Guide** - Write `docs/resources/setup.md` for new developers
 
