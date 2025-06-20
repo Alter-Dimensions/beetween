@@ -114,27 +114,26 @@ task feature-status  # Show status of all features
 
 ### Feature-Centric Organization
 
-Each feature gets its own complete documentation folder:
+Each feature gets its own complete documentation folder with a single source of truth:
 
 ```
 docs/
 ├── features/
-│   ├── user-auth/           # User Authentication Feature
-│   │   ├── index.md         # Feature overview and goals
-│   │   ├── requirements.md  # User stories and acceptance criteria
-│   │   ├── design.md        # UI/UX and technical design
-│   │   ├── implementation.md # Development plan and progress
-│   │   ├── testing.md       # Testing strategy and results
-│   │   └── status.md        # Current progress and blockers
-│   ├── dashboard/           # Dashboard Feature
-│   └── data-processing/     # Data Processing Feature
-├── overview/                # Product-level documentation
-│   ├── vision.md           # Product vision and goals
-│   ├── team.md             # Team structure and roles
-│   ├── metrics.md          # Success metrics and KPIs
-│   └── roadmap.md          # Product roadmap and timeline
-├── decisions/              # Decision history and learnings
-└── resources/              # Team resources and guidelines
+│   ├── README.md           # Feature documentation guidelines
+│   ├── _template.md        # Template for new features
+│   ├── user-auth/          # User Authentication Feature
+│   │   └── feature.md      # Single source of truth for the feature
+│   ├── pay/                # Payment Processing Feature
+│   │   └── feature.md      # Single source of truth for the feature
+│   └── [other-features]/   # Additional features
+│       └── feature.md      # Single source of truth for each feature
+├── overview/               # Product-level documentation
+│   ├── vision.md          # Product vision and goals
+│   ├── team.md            # Team structure and roles
+│   ├── metrics.md         # Success metrics and KPIs
+│   └── roadmap.md         # Product roadmap and timeline
+├── decisions/             # Decision history and learnings
+└── resources/             # Team resources and guidelines
 ```
 
 ### Why Feature-Centric
@@ -144,6 +143,7 @@ docs/
 - **Independent development**: Teams can work on features without conflicts
 - **Progress tracking**: Status is visible at the feature level
 - **Scalable**: Easy to add new features without reorganizing everything
+- **Musk-grade efficiency**: "The best part is no part" - minimal cognitive overhead
 
 ## 🤝 How to Contribute
 

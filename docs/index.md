@@ -40,13 +40,13 @@ This is not a task tracker. Beetween is our collective memory. It's where we doc
 
     *   [Architecture Overview](decisions/architecture.md)
     *   [Technology Decisions](decisions/technology.md)
-    *   [User Authentication](features/user-auth/index.md)
+    *   [User Authentication](features/user-auth/feature.md)
 
 === "Design & UX"
 
-    *   [User Authentication Design](features/user-auth/design.md)
+    *   [User Authentication](features/user-auth/feature.md)
     *   [Development Guidelines](resources/guidelines.md)
-    *   [User Flow Documentation](features/user-auth/requirements.md)
+    *   [Feature Documentation](features/README.md)
 
 === "Leadership & Stakeholders"
 

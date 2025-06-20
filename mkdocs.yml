@@ -106,23 +106,18 @@ markdown_extensions:
 nav:
   - Home: index.md
   - 🚀 Getting Started:
-      - START HERE: START-HERE.md
       - Documentation Checklist: DOCUMENTATION-CHECKLIST.md
       - Development Guide: DEVELOPMENT.md
       - Contributing Guide: CONTRIBUTING.md
-      - Quick Reference: QUICK-START.md
   - Product Overview:
       - Vision & Goals: product/vision.md
       - Team Structure: product/team.md
       - Success Metrics: product/metrics.md
       - Roadmap: product/roadmap.md
   - Features:
-      - User Authentication:
-          - Overview: features/user-auth/index.md
-          - Requirements: features/user-auth/requirements.md
-          - Design: features/user-auth/design.md
-          - Implementation: features/user-auth/implementation.md
-          - Testing: features/user-auth/testing.md
+      - Feature Documentation Guide: features/README.md
+      - User Authentication: features/user-auth/feature.md
+      - Payment Processing: features/pay/feature.md
   - Decisions & Pivots:
       - Decision Log: decisions/index.md
       - Architecture Decisions: decisions/architecture.md
