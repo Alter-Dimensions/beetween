@@ -11,6 +11,7 @@
 │   │   ├── pivots.md
 │   │   └── technology.md
 │   ├── DEVELOPMENT.md
+│   ├── DOCUMENTATION-CHECKLIST.md
 │   ├── features
 │   │   ├── dashboard
 │   │   │   ├── design.md
@@ -34,18 +35,37 @@
 │   │       ├── status.md
 │   │       └── testing.md
 │   ├── index.md
-│   ├── overview
+│   ├── product
 │   │   ├── metrics.md
+│   │   ├── personas.md
 │   │   ├── roadmap.md
 │   │   ├── team.md
 │   │   └── vision.md
 │   ├── QUICK-START.md
-│   └── resources
-│       ├── guidelines.md
-│       ├── index.md
-│       ├── meetings.md
-│       ├── onboarding.md
-│       └── setup.md
+│   ├── resources
+│   │   ├── guidelines.md
+│   │   ├── index.md
+│   │   ├── meetings
+│   │   │   ├── 2025-06-17-product-planning.md
+│   │   │   ├── 2025-06-18-standup.md
+│   │   │   └── 2025-06-19-sprint-planning.md
+│   │   ├── meetings.md
+│   │   ├── onboarding.md
+│   │   └── setup.md
+│   ├── START-HERE.md
+│   └── templates
+│       ├── api-template.md
+│       ├── decision-template.md
+│       ├── faq-template.md
+│       ├── feature-template.md
+│       ├── getting-started-template.md
+│       ├── meeting-notes-template.md
+│       ├── process-template.md
+│       ├── README.md
+│       ├── release-notes-template.md
+│       ├── security-template.md
+│       ├── troubleshooting-template.md
+│       └── user-guide-template.md
 ├── mkdocs.yml
 ├── poetry.lock
 ├── project_struture.txt
@@ -119,6 +139,8 @@
 │   │       └── index.html
 │   ├── DEVELOPMENT
 │   │   └── index.html
+│   ├── DOCUMENTATION-CHECKLIST
+│   │   └── index.html
 │   ├── features
 │   │   ├── dashboard
 │   │   │   ├── design
@@ -157,8 +179,10 @@
 │   │       └── testing
 │   │           └── index.html
 │   ├── index.html
-│   ├── overview
+│   ├── product
 │   │   ├── metrics
+│   │   │   └── index.html
+│   │   ├── personas
 │   │   │   └── index.html
 │   │   ├── roadmap
 │   │   │   └── index.html
@@ -166,11 +190,19 @@
 │   │   │   └── index.html
 │   │   └── vision
 │   │       └── index.html
+│   ├── QUICK-START
+│   │   └── index.html
 │   ├── resources
 │   │   ├── guidelines
 │   │   │   └── index.html
 │   │   ├── index.html
 │   │   ├── meetings
+│   │   │   ├── 2025-06-17-product-planning
+│   │   │   │   └── index.html
+│   │   │   ├── 2025-06-18-standup
+│   │   │   │   └── index.html
+│   │   │   ├── 2025-06-19-sprint-planning
+│   │   │   │   └── index.html
 │   │   │   └── index.html
 │   │   ├── onboarding
 │   │   │   └── index.html
@@ -179,7 +211,9 @@
 │   ├── search
 │   │   └── search_index.json
 │   ├── sitemap.xml
-│   └── sitemap.xml.gz
+│   ├── sitemap.xml.gz
+│   └── START-HERE
+│       └── index.html
 └── Taskfile.yml
 
-54 directories, 129 files
+63 directories, 154 files

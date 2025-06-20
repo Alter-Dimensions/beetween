@@ -4,13 +4,10 @@
 
 ### 🚨 URGENT (Do First)
 - [x] **Project Overview** - Update `docs/index.md` with clear "What is Beet?"
-- [ ] **Team Contact Info** - Complete `docs/overview/team.md` with who does what
-- [ ] **Setup Guide** - Write `docs/resources/setup.md` for new developers
+- [x] **Team Contact Info** - Complete `docs/product/team.md` with who does what
 
 ### ⚡ HIGH IMPACT (Do Next)
-- [ ] **Onboarding Checklist** - Create `docs/resources/onboarding.md`
-- [ ] **Current Roadmap** - Document next 4-6 weeks in `docs/overview/roadmap.md`
-- [ ] **Git Workflow** - Basic process in `docs/resources/guidelines.md`
+- [ ] **Current Roadmap** - Document next 4-6 weeks in `docs/product/roadmap.md`
 
 ### 🎯 HELPFUL (Do When Time Allows)
 - [ ] **User Stories** - Core user needs and journeys

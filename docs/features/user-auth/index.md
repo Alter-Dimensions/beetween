@@ -79,8 +79,6 @@ We're intentionally keeping this simple for the first version:
 
 This authentication feature enables other features:
 
-- **[Dashboard](../dashboard/index.md)**: Users must be logged in to see their personal dashboard
-- **[Data Processing](../data-processing/index.md)**: User-specific data requires authentication
 - **User Profile Management**: Account settings and preferences (Future)
 - **Team Collaboration**: Sharing and permissions (Future)
 
@@ -200,4 +198,4 @@ We'll track these metrics to know if the feature is working well:
 **Last Updated**: June 19, 2025
 **Next Review**: February 1, 2024
 
-*This feature overview is updated weekly during development. Check the [Status page](status.md) for daily progress updates.*
+*This feature overview is updated weekly during development. Check the [Status page](https://linear.app/alter-dimensions/) for daily progress updates.*

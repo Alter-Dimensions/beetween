@@ -132,22 +132,6 @@ tasks:
         EOF
       - echo "✅ Feature template created at templates/feature-template.md"
 
-  feature-status:
-    desc: Show status of all features
-    cmds:
-      - echo "=== Feature Status Overview ==="
-      - |
-        for status_file in docs/features/*/status.md; do
-          if [ -f "$status_file" ]; then
-            feature_name=$(dirname "$status_file" | sed 's|docs/features/||')
-            echo "📁 Feature: $feature_name"
-            grep -m 1 "Status.*:" "$status_file" 2>/dev/null || echo "   Status: Not specified"
-            grep -m 1 "Owner.*:" "$status_file" 2>/dev/null || echo "   Owner: Not specified"
-            grep -m 1 "Target.*:" "$status_file" 2>/dev/null || echo "   Target: Not specified"
-            echo ""
-          fi
-        done
-
   update-feature-status:
     desc: Update feature status with current date
     vars:

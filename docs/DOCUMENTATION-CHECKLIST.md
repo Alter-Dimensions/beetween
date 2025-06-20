@@ -69,12 +69,6 @@
     - [ ] Security considerations
     - [ ] Implementation status
 
-  - [ ] **Dashboard** (`docs/features/dashboard/`)
-    - [ ] Layout and component requirements
-    - [ ] Data visualization needs
-    - [ ] Responsive design considerations
-    - [ ] Performance requirements
-
 ### Technical Architecture
 - [ ] **System Architecture** (`docs/decisions/architecture.md`)
   - [ ] High-level system diagram
