@@ -103,7 +103,7 @@ By the end of this guide, you'll be able to:
 
 ### Still Need Help?
 - **Email:** [support email]
-- **Slack:** [support channel]
+- **Discord:** [support channel]
 - **Knowledge Base:** [link to additional resources]
 
 ## Advanced Options

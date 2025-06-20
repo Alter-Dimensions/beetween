@@ -62,7 +62,7 @@ This is not a task tracker. Beetween is our collective memory. It's where we doc
 * **📋 Project Board:** [Link to Linear Project]
 * **💻 Code Repository:** [Link to GitHub Repository]
 * **🎨 Design Files:** [Link to Figma Project]
-* **💬 Team Chat:** [Link to Slack Channel]
+* **💬 Team Chat:** [Link to Discord Channel]
 * **🗒️ Meeting Notes:** [Link to Shared Notes Folder]
 
 ---

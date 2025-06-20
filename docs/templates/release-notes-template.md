@@ -86,7 +86,7 @@ Special thanks to:
 
 - **Documentation:** [Link to docs]
 - **Issues:** [Link to issue tracker]
-- **Community:** [Link to Discord/Slack/Forum]
+- **Community:** [Link to Discord/Discord/Forum]
 - **Enterprise Support:** [Contact information]
 
 ---

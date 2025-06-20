@@ -228,7 +228,7 @@ export PRODUCT_ENV="development"
 
 ### Getting Help
 - **Documentation:** [Link to full docs]
-- **Community:** [Discord/Slack/Forum link]
+- **Community:** [Discord/Discord/Forum link]
 - **Support:** [Support contact method]
 - **Bug Reports:** [Issue tracker link]
 

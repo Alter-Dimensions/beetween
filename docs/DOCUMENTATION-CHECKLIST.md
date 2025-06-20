@@ -19,7 +19,7 @@
 - [ ] **Team Quick Reference** (`docs/overview/team.md`)
   - [ ] Who does what? (roles and responsibilities)
   - [ ] Contact information and availability
-  - [ ] Communication channels (Slack, Discord, email)
+  - [ ] Communication channels (Discord, Discord, email)
   - [ ] Meeting schedule and calendar links
 
 - [ ] **Development Setup** (`docs/resources/setup.md`)

@@ -295,6 +295,6 @@ class ApiClient:
 
 ---
 
-**Support:** [API Support Email/Slack]
+**Support:** [API Support Email/Discord]
 **Status Page:** [API Status Page URL]
 **Changelog:** [API Changelog URL]

@@ -249,7 +249,7 @@ Yes! We love hearing from our users. You can:
 
 ### Community
 - [User Community Forum](link)
-- [Discord/Slack Channel](link)
+- [Discord/Discord Channel](link)
 - [User Groups/Meetups](link)
 
 ### Developer Resources

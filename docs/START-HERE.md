@@ -60,13 +60,13 @@
 ## Current Team
 | Role | Name | Contact | Responsibilities |
 |------|------|---------|------------------|
-| Product Manager | [Name] | [email/slack] | [What they own] |
-| Lead Developer | [Name] | [email/slack] | [What they own] |
-| Developer | [Name] | [email/slack] | [What they own] |
+| Product Manager | [Name] | [email/discord] | [What they own] |
+| Lead Developer | [Name] | [email/discord] | [What they own] |
+| Developer | [Name] | [email/discord] | [What they own] |
 
 ## Communication
 - **Daily Standup:** [When and where]
-- **Team Chat:** [Slack/Discord channel]
+- **Team Chat:** [Discord/Discord channel]
 - **Urgent Issues:** [How to escalate]
 ```
 

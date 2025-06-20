@@ -51,13 +51,13 @@ These are not suggestions. They are the physics of how we work.
 
 Communication should be efficient and clear.
 
-* **Primary Channel:** Use direct messages or dedicated Slack channels. Communication should be concise and to the point.
+* **Primary Channel:** Use direct messages or dedicated Discord channels. Communication should be concise and to the point.
 * **Meetings are a Bug, Not a Feature:**
   * Only schedule a meeting if it's the only way to solve a problem.
   * Keep them as short as possible.
   * Have a clear agenda and a decision-maker present.
   * If you are not adding value to a meeting, leave. It is not rude to leave; it is rude to waste your time and the company's resources.
-* **Asynchronous is Default:** Use written communication (Slack, documents) by default to maintain momentum. Only use synchronous meetings to unblock complex issues.
+* **Asynchronous is Default:** Use written communication (Discord, documents) by default to maintain momentum. Only use synchronous meetings to unblock complex issues.
 
 ---
 

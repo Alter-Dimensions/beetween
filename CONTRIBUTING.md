@@ -6,7 +6,6 @@ Welcome! This guide explains how our team contributes to and maintains our produ
 
 This is **internal product development documentation** for the Beet team. It helps us:
 
-- Track feature development progress
 - Document product decisions and reasoning
 - Share knowledge across team members
 - Onboard new team members effectively
@@ -17,7 +16,6 @@ This is **internal product development documentation** for the Beet team. It hel
 ### Everyone on the Team Should
 
 - Keep their assigned documentation sections current
-- Update status and progress regularly
 - Ask questions when something is unclear
 - Suggest improvements to documentation structure
 - Participate in documentation reviews
@@ -33,10 +31,8 @@ This is **internal product development documentation** for the Beet team. It hel
 
 **Developers:**
 
-- Update implementation progress and status
 - Document technical decisions and architecture choices
 - Share development insights and lessons learned
-- Maintain setup and development guides
 
 **Designers:**
 
@@ -219,9 +215,7 @@ task deploy                   # Deploy to GitHub Pages (maintainers only)
 
 **No review needed for:**
 
-- Status updates and progress tracking
 - Minor corrections (typos, formatting)
-- Adding your own meeting notes or insights
 - Updating dates or contact information
 
 ### Who to Request Reviews From
@@ -320,7 +314,7 @@ Before submitting changes, verify:
 
 ### Documentation Questions
 
-- **Slack**: Ask in #docs-help channel
+- **Discord**: Ask in #docs-help channel
 - **Email**: Contact the document owner listed in the file
 - **Meeting**: Bring up in team standup or planning meetings
 
@@ -347,7 +341,7 @@ Before submitting changes, verify:
 
 **For urgent documentation issues:**
 
-- Slack: #docs-urgent
+- Discord: #docs-urgent
 - Email: [team-lead@company.com]
 
 ---

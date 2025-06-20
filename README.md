@@ -217,7 +217,7 @@ This documentation intentionally avoids code examples to stay accessible to all 
 
 ### Documentation Questions
 
-- **Slack**: Post in #docs-help channel
+- **Discord**: Post in #docs-help channel
 - **Email**: Contact [documentation owner email]
 - **Meeting**: Bring up in team standup or planning meetings
 
