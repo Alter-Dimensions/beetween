@@ -112,10 +112,10 @@ nav:
       - Contributing Guide: CONTRIBUTING.md
       - Quick Reference: QUICK-START.md
   - Product Overview:
-      - Vision & Goals: overview/vision.md
-      - Team Structure: overview/team.md
-      - Success Metrics: overview/metrics.md
-      - Roadmap: overview/roadmap.md
+      - Vision & Goals: product/vision.md
+      - Team Structure: product/team.md
+      - Success Metrics: product/metrics.md
+      - Roadmap: product/roadmap.md
   - Features:
       - User Authentication:
           - Overview: features/user-auth/index.md

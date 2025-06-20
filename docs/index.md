@@ -32,30 +32,30 @@ This is not a task tracker. Beetween is our collective memory. It's where we doc
 === "Product & Strategy"
 
     *   [Product Vision & Strategy](product/vision.md)
-    *   [Target Audience & Personas](product/personas.md)
+    *   [Team Structure & Roles](product/team.md)
     *   [High-Level Roadmap](product/roadmap.md)
     *   [Decision Log](decisions/index.md)
 
 === "Engineering & Architecture"
 
-    *   [Architecture Overview](engineering/architecture.md)
-    *   [Technical Decision Log](engineering/technical-decisions.md)
-    *   [API Documentation](engineering/api-docs.md)
-    *   [Data Models](engineering/data-models.md)
+    *   [Architecture Overview](decisions/architecture.md)
+    *   [Technology Decisions](decisions/technology.md)
+    *   [User Authentication](features/user-auth/index.md)
+    *   [Dashboard Features](features/dashboard/index.md)
 
 === "Design & UX"
 
-    *   [Design Principles](design/principles.md)
-    *   [User Research & Insights](design/research.md)
-    *   [Design System](design/system.md)
-    *   [Key User Flows](design/user-flows.md)
+    *   [User Authentication Design](features/user-auth/design.md)
+    *   [Dashboard Design](features/dashboard/design.md)
+    *   [Development Guidelines](resources/guidelines.md)
+    *   [User Flow Documentation](features/user-auth/requirements.md)
 
 === "Leadership & Stakeholders"
 
-    *   [Team Structure & Roles](leadership/team.md)
-    *   [Success Metrics (OKRs)](leadership/metrics.md)
-    *   [Go-to-Market Plan](leadership/gtm.md)
-    *   [Key Project Milestones](leadership/milestones.md)
+    *   [Team Structure & Roles](product/team.md)
+    *   [Success Metrics](product/metrics.md)
+    *   [Pivot History](decisions/pivots.md)
+    *   [Lessons Learned](decisions/lessons.md)
 
 ---
 
