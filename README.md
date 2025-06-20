@@ -123,7 +123,7 @@ docs/
 │   ├── _template.md        # Template for new features
 │   ├── user-auth/          # User Authentication Feature
 │   │   └── feature.md      # Single source of truth for the feature
-│   ├── pay/                # Payment Processing Feature
+│   ├── pay/                # Pay Feature
 │   │   └── feature.md      # Single source of truth for the feature
 │   └── [other-features]/   # Additional features
 │       └── feature.md      # Single source of truth for each feature

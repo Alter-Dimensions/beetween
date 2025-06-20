@@ -1,4 +1,4 @@
-site_name: Beet - Product Development Hub
+site_name: Beetween
 site_description: Internal documentation for Beet product development team
 site_author: Beet Development Team
 site_url: https://alter-dimensions.github.io/beetween
@@ -112,13 +112,19 @@ nav:
       - Roadmap: product/roadmap.md
   - Features:
       - Feature Documentation Guide: features/README.md
-      - Beet Bites: features/bites/feature.md
+      - Bites: features/bites/feature.md
       - Box Office: features/box-office/feature.md
-      - Beet Bucks: features/bucks/feature.md
+      - Bucks: features/bucks/feature.md
       - Events: features/events/feature.md
+      - Notifications: features/notifications/feature.md
       - Profile: features/profile/feature.md
-      - User Authentication: features/user-auth/feature.md
-      - Payment Processing: features/pay/feature.md
+      - Auth: features/user-auth/feature.md
+      - Pay: features/pay/feature.md
+  - Software 3.0:
+      - Overview: software-3.0/index.md
+      - AI-Powered Features: software-3.0/ai-features.md
+      - Agent-Ready Architecture: software-3.0/agent-ready.md
+      - Partnership Automation: software-3.0/partnership-automation.md
   - Decisions & Pivots:
       - Decision Log: decisions/index.md
       - Architecture Decisions: decisions/architecture.md
